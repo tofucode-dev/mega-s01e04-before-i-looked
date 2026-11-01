@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,39 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Completed 2026-11-01
+
+The reviewer confirmed they had seen the marked preview before cleanup. The human then
+approved its replacement. Saved `/digest/2026-10-28` again with `LANE_MARKER` unset and
+uploaded it over the same public link on the existing `mega-dev` Worker:
+https://mega-dev.contact-tofucode.workers.dev/s01e04/digest.html
+
+The live page matches the new export, reads "no marker set", and contains no lane marker.
+Original Worker modules, agent routes and secret bindings remain unchanged.
+Verification: 43 rig tests, TypeScript checking and 19 Worker tests pass; `runs/` is unchanged.
+
+### Issue list
+
+Repository: https://github.com/tofucode-dev/mega-s01e04-before-i-looked
+
+- #1: Define the digest types and reader contract (section 1).
+- #2: Read and aggregate a night run log (section 1).
+- #3: Render the server-side digest page (section 2a).
+- #4: Expose the digest JSON route (section 2b).
+- #5: Link board nights to their digests with status counts (section 2c).
+- #6: Test the HTML and JSON digest routes (section 2d).
+- #7: Publish the digest HTML copy and send it for review (section 3).
+- #8: Remove the preview marker after review and archive the plan (section 4).
+
+### Worker record
+
+One issue at a time on `main`, as requested by the human. Actual model records:
+
+- #1 and #2: Codex / gpt-6.1-sol / effort not exposed.
+- #3 through #6: Claude / claude-haiku-5-5 / low configured by the parent.
+- #7 and #8: Codex (T3 Code) / gpt-6.1-sol / effort not exposed.
+
+Issue #7 was initially closed before the reviewer looked. The course rejected that
+handoff; it was reopened and the same preview was resubmitted. It stayed open until
+the course confirmed review. Cleanup was not performed until separate human approval.
